@@ -36,10 +36,13 @@
         </style>
     </head>
     <body>
-        <div class="container">
+<!--         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Petstagram</div>
             </div>
+        </div> -->
+        <div>
+            <h1>Here we have an app</h1>    
         </div>
     </body>
 </html>
