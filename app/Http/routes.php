@@ -17,20 +17,21 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/posts', function () {
-    return view('posts/index');
+// Route::get('/posts', function () {
+//     return view('posts/index');
 
-    $posts = Post::orderBy('created_at', 'asc')->get();
+//     $posts = Post::orderBy('created_at', 'asc')->get();
 
-    return view('posts', [
-        'posts' => $posts
-      ]);
-});
+//     return view('posts', [
+//         'posts' => $posts
+//       ]);
+// });
 
-Route::get('/posts/new', function () {
-  return view('posts/new');
-});
+Route::get('posts', 'PostsController@index');
 
+Route::get('posts/new', 'PostsController@newPost');
+
+Route::get('posts/{id}', 'PostsController@show');
 
 Route::post('/posts', function (Request $request) {
   $validator = Validator::make($request->all(), [

@@ -8,11 +8,11 @@
     </head>
 
     <body>
-        <div class="container">
-            <nav class="navbar navbar-default">
+        <!-- <div class="container"> -->
+            <!-- <nav class="navbar navbar-default"> -->
                 <!-- Navbar Contents -->
-            </nav>
-        </div>
+            <!-- </nav> -->
+        <!-- </div> -->
 
         @yield('content')
     </body>

@@ -4,7 +4,7 @@
 
   <h1>Posts#Index</h1>
 
-  @foreach ($posts as $post)
-    {{ $post->title }}
+  @foreach ($lessons as $lesson)
+    {{ $lesson}}
   @endforeach
-@endsection
+@stop
