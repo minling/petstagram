@@ -6,14 +6,17 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Post;
 
 class PostsController extends Controller
 {
 
     public function index()
-    {
-        $lessons = ['My First Lesson', 'My second lesson', 'my third lesson'];
-        return view('posts.index', ['lessons' => $lessons]);
+    {   
+        // $posts = DB::table('posts')->get();
+        $posts = Post::get();
+        
+        return view('posts.index', compact('posts'));
     }
 
     // cannot do new() for some reason
@@ -23,8 +26,10 @@ class PostsController extends Controller
     }   
 
     public function show($id)
-    {
-        return $id;
+    {   
+        // $post = DB::table('posts')->find($id);
+        $post = Post::find($id);
+        return view('posts.show', compact('post'));
     } 
     
 }
