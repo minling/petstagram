@@ -5,9 +5,22 @@
 
   {{ $post->title }}
 
-  {!! Form::model($post) !!}
+  {!! Form::model($post, ['url' => 'posts/' . $post->id, 'method' => 'PATCH']) !!}
+    <div class="form-group">
+      {!! Form::text('title', null, ['class' => 'form-control']) !!}
+    </div>
 
-    {!! Form::text('title') !!}
+    <div class="form-group">
+      {!! Form::text('author', null, ['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+      {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+      {!! Form::submit('Update Post', ['class' => 'btn btn-primary']) !!}
+    </div>
 
   {!! Form::close() !!}
 @stop

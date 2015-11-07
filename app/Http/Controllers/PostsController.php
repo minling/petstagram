@@ -20,9 +20,9 @@ class PostsController extends Controller
     }
 
     // cannot do new() for some reason
-    public function newPost()
+    public function create()
     {
-        return view('posts.new');
+        return view('posts.create');
     }   
 
     public function show($id)
@@ -38,4 +38,22 @@ class PostsController extends Controller
         return view('posts.edit', compact('post'));
     }
     
+    public function update($id, Request $request)
+    {
+        
+        $post = Post::find($id);
+
+        $post->fill($request->input())->save();
+
+        return redirect('posts');
+    }
+
+    public function store(Request $request)
+    {
+
+        $post->create($request->all());
+
+        return redirect()->route('posts.index');
+    }
+
 }

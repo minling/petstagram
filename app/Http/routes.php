@@ -15,43 +15,40 @@
 //     return view('welcome');
 // });
 
+
 Route::get('/', 'HomeController@index');
 
-// Route::get('/posts', function () {
-//     return view('posts/index');
+Route::resource('posts', 'PostsController');
 
-//     $posts = Post::orderBy('created_at', 'asc')->get();
+// Route::get('posts', 'PostsController@index');
 
-//     return view('posts', [
-//         'posts' => $posts
+// Route::get('posts/create', 'PostsController@create');
+
+// Route::get('posts/{id}', 'PostsController@show');
+
+// Route::get('posts/{id}/edit', 'PostsController@edit');
+
+// Route::patch('posts/{id}', 'PostsController@update');
+
+
+// Route::post('posts', 'PostsController@store');
+// Route::post('/posts', function (Request $request) {
+//   $validator = Validator::make($request->all(), [
+//           'title' => 'required|max:255',
 //       ]);
+
+//   if ($validator->fails()) {
+//         return redirect('/')
+//             ->withInput()
+//             ->withErrors($validator);
+//     }
+
+//   $post = new App\Post();
+//   $post->title = $request->title;
+//   $post->save();
+
+//   return redirect('/posts');
 // });
-
-Route::get('posts', 'PostsController@index');
-
-Route::get('posts/new', 'PostsController@newPost');
-
-Route::get('posts/{id}', 'PostsController@show');
-
-Route::get('posts/{id}/edit', 'PostsController@edit');
-
-Route::post('/posts', function (Request $request) {
-  $validator = Validator::make($request->all(), [
-          'title' => 'required|max:255',
-      ]);
-
-  if ($validator->fails()) {
-        return redirect('/')
-            ->withInput()
-            ->withErrors($validator);
-    }
-
-  $post = new App\Post();
-  $post->title = $request->title;
-  $post->save();
-
-  return redirect('/posts');
-});
 
 
 
