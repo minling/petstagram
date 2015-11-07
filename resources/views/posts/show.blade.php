@@ -3,6 +3,9 @@
 @section('content')
   <h1>Posts#Show</h1>
   
-    {{ $post->title}}
-  
+    <ul>    
+      <li> Title: {{ $post->title }} </li>
+      <li> Author: {{ $post->author }}</li>
+      <li>Content: {{ $post->content }}</li>
+  </ul>
 @stop

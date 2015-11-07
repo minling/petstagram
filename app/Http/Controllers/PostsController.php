@@ -31,5 +31,11 @@ class PostsController extends Controller
         $post = Post::find($id);
         return view('posts.show', compact('post'));
     } 
+
+    public function edit($id)
+    {
+        $post = Post::find($id);
+        return view('posts.edit', compact('post'));
+    }
     
 }

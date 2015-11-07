@@ -33,6 +33,8 @@ Route::get('posts/new', 'PostsController@newPost');
 
 Route::get('posts/{id}', 'PostsController@show');
 
+Route::get('posts/{id}/edit', 'PostsController@edit');
+
 Route::post('/posts', function (Request $request) {
   $validator = Validator::make($request->all(), [
           'title' => 'required|max:255',
