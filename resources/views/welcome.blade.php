@@ -1,48 +1,29 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@extends('layouts.app')
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+@section('content')
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+  <h1>Home#Index</h1>
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-<!--         <div class="container">
-            <div class="content">
-                <div class="title">Petstagram</div>
+  @foreach ($posts as $post)
+  <div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <img src="http://www.cgdev.org/sites/default/files/cat8.jpg">
+              <span class="card-title">{{ $post->title }}</span>
             </div>
-        </div> -->
-        <div>
-            <h1>Here we have an app</h1>    
+            <div class="card-content">
+            <li> Title: <a href="posts/{{ $post->id }}"> {{ $post->title }} </a></li>
+              <li> Title: {{ $post->title }} </li>
+              <li> Author: {{ $post->author }}</li>
+              <li>Content: {{ $post->content }}</li>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
         </div>
-    </body>
-</html>
+      </div>
+  @endforeach
+@stop

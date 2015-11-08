@@ -48,9 +48,10 @@ class PostsController extends Controller
         return redirect('posts');
     }
 
+
     public function store(Request $request)
     {
-
+        $post= new Post();
         $post->create($request->all());
 
         return redirect()->route('posts.index');
