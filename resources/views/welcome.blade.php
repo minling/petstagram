@@ -15,7 +15,6 @@
             </div>
             <div class="card-content">
             <li> Title: <a href="posts/{{ $post->id }}"> {{ $post->title }} </a></li>
-              <li> Title: {{ $post->title }} </li>
               <li> Author: {{ $post->author }}</li>
               <li>Content: {{ $post->content }}</li>
             </div>
