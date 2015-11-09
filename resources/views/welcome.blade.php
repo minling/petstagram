@@ -3,7 +3,7 @@
 
 @section('content')
 
-  <h1>Home#Index</h1>
+  <h1>Welcome to Petstagram!</h1>
 
   @foreach ($posts as $post)
   <div class="row">
@@ -19,7 +19,7 @@
               <li>Content: {{ $post->content }}</li>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <i class="fa fa-heart" style="color:pink"></i>
             </div>
           </div>
         </div>

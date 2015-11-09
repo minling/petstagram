@@ -16,7 +16,7 @@
               <li>Content: {{ $post->content }}</li>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <li><a href="{{ action("PostsController@edit", ["id" => $post->id]) }}">Edit</a></li>
             </div>
           </div>
         </div>
